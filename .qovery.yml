@@ -1,0 +1,11 @@
+---
+application:
+  name: "faster-than-love"
+  project: "loveproject"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-faster-than-love"
+  routes:
+  - application_name: "faster-than-love"
+    paths:
+    - "/*"
