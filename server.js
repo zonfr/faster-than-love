@@ -1,10 +1,19 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
+var http = require("http");
+  setInterval(function() {
+    http.get("http://https://faster-than-love.herokuapp.com");
+}, 300000);
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   
 });
+
+// client.on('', () => {
+	
+// });
 
 client.on('messageReactionAdd', async (reaction, user) => {
 	
@@ -61,7 +70,7 @@ client.on('message', msg => {
 	if (msg.author.bot) return;
 	if (msg.content.split(" ")[0] != "!love") return;
 		
-	const command = msg.content.split(" ")[1]
+	const command = msg.content.split(" ")[1];
 	
 	if (command == "help"){
 		msg.channel.send("tu a tapé help");
