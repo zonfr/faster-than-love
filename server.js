@@ -1,11 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
 
-var http = require("http");
-  setInterval(function() {
-    http.get("http://https://faster-than-love.herokuapp.com");
-}, 100000);
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   
