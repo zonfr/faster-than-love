@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });
+const keepAlive = require("./server");
 
 var qwant = require("qwant-api");
 
