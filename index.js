@@ -69,8 +69,8 @@ client.on('message', msg => {
 	if (msg.content.split(" ")[0] != "!love" || msg.content.split(" ").length == 0) return;
 		
 	const command = msg.content.split(" ")[1];
-	const args1 = msg.content.split(" ").length > 2 ? msg.content.split(" ")[2];
-	const args2 = msg.content.split(" ").length > 3 ? msg.content.split(" ")[3];
+	const args1 = msg.content.split(" ").length > 2 ? msg.content.split(" ")[2] : null;
+	const args2 = msg.content.split(" ").length > 3 ? msg.content.split(" ")[3] : null;
 	
 	if (command == "help"){
 		msg.channel.send("tu a tapé help");
@@ -84,10 +84,10 @@ client.on('message', msg => {
 			if (err) return console.log(err)
 			
 			const kissEmbed = new Discord.MessageEmbed()
-			.setColor('#FF448F');
-			.setTitle("hhoHoooho");
-			.setDescription("Une belle histoire d'amour commence entre " + msg.mentions.users.first.username +  + msg.mentions.users.last.username);
-			.setImage(data["data"]["result"]["items"][int(rand_num(0, 35))]["media"]);
+			kissEmbed.setColor('#FF448F');
+			kissEmbed.setTitle("hhoHoooho");
+			kissEmbed.setDescription("Une belle histoire d'amour commence entre " + msg.mentions.users.first.username +  + msg.mentions.users.last.username);
+			kissEmbed.setImage(data["data"]["result"]["items"][int(rand_num(0, 35))]["media"]);
 			
 			msg.channel.send(kissEmbed);
 		});
